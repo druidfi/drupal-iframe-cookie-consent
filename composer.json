@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/druidfi/drupal-iframe-cookie-consent",
     "require": {
+        "drupal/core": "^9.5 || ^10.0",
         "masterminds/html5": "^2.7"
     },
     "repositories": [
