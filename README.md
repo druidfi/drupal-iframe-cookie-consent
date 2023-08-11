@@ -10,9 +10,9 @@ https://support.cookiebot.com/hc/en-us/articles/360003812053-Hide-and-show-conte
 ## In this module
 
 This module adds Ckeditor plugin which convert Youtube iframe embeds to support cookie consent's. You can choose one of
-these values: 'preferences', 'statistics', or 'marketing' as data-cookieconsent attribute.
+these values: `preferences`, `statistics`, or `marketing` as data-cookieconsent attribute.
 
-You will find these settings under Content authoring / Iframe cookie consent:
+You will find these settings under Content authoring / Iframe Cookie Consent:
 
 ```
 /admin/config/content/iframe_cookie_consent

@@ -1,6 +1,6 @@
 {
     "name": "druidfi/iframe_cookie_consent",
-    "description": "Adds Ckeditor plugin which converts Youtube iframe embeds to support cookie consent",
+    "description": "Adds Ckeditor plugin which converts iframe embeds to support cookie consent",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
     "authors": [

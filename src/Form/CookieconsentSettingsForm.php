@@ -9,13 +9,16 @@ namespace Drupal\iframe_cookie_consent\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 class CookieconsentSettingsForm extends ConfigFormBase {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
+  protected function getEditableConfigNames(): array {
     return [
       'iframe_cookie_consent.settings',
     ];
@@ -24,20 +27,20 @@ class CookieconsentSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function getFormId() {
+  public function getFormId(): string {
     return 'cookieconsent_settings_form';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state): array {
     $config = $this->config('iframe_cookie_consent.settings');
 
     $form['cookieconsent_category'] = [
-      '#title' => t('Cookieconsent category'),
+      '#title' => $this->t('Cookieconsent category'),
       '#type' => 'select',
-      '#description' => t(
+      '#description' => $this->t(
         'To be able to enable the iframe when consent has been given,
         the data-cookieconsent attribute must be added with one of these values.'
       ),
@@ -55,10 +58,11 @@ class CookieconsentSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state): void {
     $config = $this->config('iframe_cookie_consent.settings');
     $config->set('cookieconsent_category', $form_state->getValue('cookieconsent_category'));
     $config->save();
-    return parent::submitForm($form, $form_state);
+
+    parent::submitForm($form, $form_state);
   }
 }

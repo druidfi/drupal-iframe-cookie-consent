@@ -1,4 +1,4 @@
-name: Iframe cookie consent
+name: Iframe Cookie Consent
 description: Hide and show content based on the visitor's consent
 type: module
 package: Custom

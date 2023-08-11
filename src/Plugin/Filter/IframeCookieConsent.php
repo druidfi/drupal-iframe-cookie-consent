@@ -21,7 +21,7 @@ class IframeCookieConsent extends FilterBase {
   /**
    * {@inheritdoc}
    */
-  public function process($text, $langcode) {
+  public function process($text, $langcode): FilterProcessResult {
     // Get cookie consent settings.
     $config = \Drupal::config('iframe_cookie_consent.settings');
     // Get cookie consent category.
@@ -30,7 +30,7 @@ class IframeCookieConsent extends FilterBase {
     $html5 = new HTML5();
     libxml_use_internal_errors(true);
     $dom = $html5->loadHTML(mb_convert_encoding($text, 'HTML-ENTITIES', 'UTF-8'));
-    // Spotify & Youtube regex pattern.
+    // Spotify & YouTube regex pattern.
     $regex_pattern = "/(open.spotify.com|youtube.com|youtu.be)\/(embed)?(\?v=)?(\S+)?/";
     $match = NULL;
 
@@ -39,7 +39,7 @@ class IframeCookieConsent extends FilterBase {
       // Get iframe url.
       $url = $iframe->getAttribute('src');
 
-      // Check if iframe has Youtube url.
+      // Check if iframe has YouTube url.
       if (preg_match($regex_pattern, $url, $match)) {
         $match = TRUE;
         // Change src attribute to data-cookieblock-src.
