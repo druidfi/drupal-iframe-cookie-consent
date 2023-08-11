@@ -11,8 +11,10 @@
     ],
     "homepage": "https://github.com/druidfi/iframe_cookie_consent",
     "require": {
+        "php": "^8.0",
+        "ext-dom": "*",
+        "ext-libxml": "*",
         "drupal/core": "^9.5 || ^10.0",
-        "masterminds/html5": "^2.7",
-        "php": "^8.0"
+        "masterminds/html5": "^2.7"
     }
 }
