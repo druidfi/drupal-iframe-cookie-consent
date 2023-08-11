@@ -14,19 +14,5 @@
         "drupal/core": "^9.5 || ^10.0",
         "masterminds/html5": "^2.7",
         "php": "^8.0"
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "masterminds/html5",
-                "version": "2.7.6",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://github.com/Masterminds/html5-php/archive/refs/tags/2.7.6.zip",
-                    "type": "zip"
-                }
-            }
-        }
-    ]
+    }
 }
